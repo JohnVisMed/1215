@@ -99,9 +99,9 @@
       // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
       // expected to change.
 
-      if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
-        document.body.innerHTML = "<h2 style='text-align:center;margin-top:40px;'>😂😂This game is only available on mobile devices.💀💀</h2>"
+        // document.body.innerHTML = "<h2 style='text-align:center;margin-top:40px;'>😂😂This game is only available on mobile devices.💀💀</h2>"
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
@@ -112,7 +112,8 @@
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
         var meta = document.createElement('meta');
         meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        // meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        meta.content = 'width=1080, height=1920, initial-scale=1.0, user-scalable=no';
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
         canvas.className = "unity-mobile";
